@@ -1,18 +1,18 @@
-// Æäåì ïîëíîé çàãðóçêè DOM
+// Ð–Ð´ÐµÐ¼ Ð¿Ð¾Ð»Ð½Ð¾Ð¹ Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ¸ DOM
 document.addEventListener('DOMContentLoaded', function () {
-    // Îáðàáîò÷èê äëÿ êíîïêè CTA
+    // ÐžÐ±Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸Ðº Ð´Ð»Ñ ÐºÐ½Ð¾Ð¿ÐºÐ¸ CTA
     const ctaButton = document.getElementById('cta-button');
     if (ctaButton) {
         ctaButton.addEventListener('click', function () {
-            alert('Ñïàñèáî çà èíòåðåñ ê íàøåìó ñàéòó!');
-            // Àíèìàöèÿ êíîïêè
+            alert('Ð¡Ð¿Ð°ÑÐ¸Ð±Ð¾ Ð·Ð° Ð¸Ð½Ñ‚ÐµÑ€ÐµÑ Ðº Ð½Ð°ÑˆÐµÐ¼Ñƒ ÑÐ°Ð¹Ñ‚Ñƒ!');
+            // ÐÐ½Ð¸Ð¼Ð°Ñ†Ð¸Ñ ÐºÐ½Ð¾Ð¿ÐºÐ¸
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
                 this.style.transform = 'scale(1)';
             }, 150);
         });
     }
-    // Ïëàâíàÿ ïðîêðóòêà äëÿ ÿêîðíûõ ññûëîê
+    // ÐŸÐ»Ð°Ð²Ð½Ð°Ñ Ð¿Ñ€Ð¾ÐºÑ€ÑƒÑ‚ÐºÐ° Ð´Ð»Ñ ÑÐºÐ¾Ñ€Ð½Ñ‹Ñ… ÑÑÑ‹Ð»Ð¾Ðº
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -25,14 +25,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-    // Äîáàâëÿåì òåêóùèé ãîä â ôóòåð
+    // Ð”Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ Ñ‚ÐµÐºÑƒÑ‰Ð¸Ð¹ Ð³Ð¾Ð´ Ð² Ñ„ÑƒÑ‚ÐµÑ€
     const currentYear = new Date().getFullYear();
     const yearElement = document.querySelector('footer p');
     if (yearElement) {
         yearElement.innerHTML = yearElement.innerHTML.replace('2024',
             currentYear);
     }
-    // Àíèìàöèÿ ïîÿâëåíèÿ ýëåìåíòîâ ïðè ñêðîëëå
+    // ÐÐ½Ð¸Ð¼Ð°Ñ†Ð¸Ñ Ð¿Ð¾ÑÐ²Ð»ÐµÐ½Ð¸Ñ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¿Ñ€Ð¸ ÑÐºÑ€Ð¾Ð»Ð»Ðµ
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }, observerOptions);
-    // Íàáëþäàåì çà ýëåìåíòàìè ñ àíèìàöèåé
+    // ÐÐ°Ð±Ð»ÑŽÐ´Ð°ÐµÐ¼ Ð·Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°Ð¼Ð¸ Ñ Ð°Ð½Ð¸Ð¼Ð°Ñ†Ð¸ÐµÐ¹
     document.querySelectorAll('.feature').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
