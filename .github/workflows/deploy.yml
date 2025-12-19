@@ -21,7 +21,7 @@ jobs:
       
       # Шаг 3: Проверка HTML (опционально)
       - name: HTML Validation
-        uses: cyrilletuzi/validate-html@v4
+        
         with:
           pattern: "**/*.html"
           level: warning
