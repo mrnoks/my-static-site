@@ -9,17 +9,28 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # Шаг 1: Checkout кода
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # (Опционально) Шаг 2: Setup Node.js — если нет npm-сборки, можно убрать
+      # - name: Setup Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '18'
+      #     # cache: 'npm'  # только если есть package-lock.json / yarn.lock
+
+      # Шаг 3: Деплой на GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./        # тут папка с сайтом
+          publish_dir: ./        # папка с index.html (./, ./docs и т.п.)
           force_orphan: true
 
+      # Шаг 4: Уведомление о успешном деплое
       - name: Success notification
         if: success()
         run: |
